@@ -1,0 +1,12 @@
+<div>
+	Go Back
+	<a class="btn btn-xs btn-default" ui-sref="iot"> <i class="fa fa-arrow-left"> </i> Show IOT</a>
+</div>
+<div class="row">
+   
+   <div class="form-group">
+
+   	  <button class="btn btn-default" ng-click="onAndOff(bulb)" ng-if="!bulb.isOn">Switch On Bulb</button>
+   	  <button class="btn btn-default" ng-click="onAndOff(bulb)" ng-if="bulb.isOn">Switch Off Bulb</button>
+   </div>	
+</div>

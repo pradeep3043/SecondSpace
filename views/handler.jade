@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .main(ng-app="pradeepApp")
+    div(ui-view)   
+block code 
+    script(src="/bower_components/angular/angular.js")
+    script(src="/bower_components/angular-ui-router/release/angular-ui-router.js")
+    script(src="/js/application.js")      
+    script.
+      $(document).ready(function(){
+            $("input.btn").click(function(){
+               var body = {
+                  color     : $(".color").val(),
+                  background: $(".bg").val(),
+               }
+               $.ajax({
+                  url:"/handler",
+                  dataType:"json",
+                  type:"post",
+                  data: body,
+                  success:function(data){
+                    console.log(data);
+                  }
+               });
+            });
+      });

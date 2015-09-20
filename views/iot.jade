@@ -1,0 +1,36 @@
+extends layout
+
+block content
+   
+   .container
+     .row
+       .col-md-2.col-sm-2.col-xs-4
+        div.box.bulb
+         span 
+           i.icon.fa.fa-lightbulb-o
+       .col-md-2.col-sm-2.col-xs-4
+        div.box 
+         span 
+           i.icon.fa.fa-coffee
+       .col-md-2.col-sm-2.col-xs-4
+        div.box 
+         span 
+           i.icon.fa.fa-wifi
+
+               
+   script(src="//js.pusher.com/2.2/pusher.min.js")
+   script.
+        var pusher = new Pusher('9e9e520ff97ec106c3be');
+        var channel = pusher.subscribe('nid');
+        channel.bind('pradeep', function(data) {
+           if(typeof(data) =='object'){
+             $(".box").removeClass("active");
+             if(data.isOn){
+              
+               $(".box.bulb").addClass("active");
+             }
+             
+           }else{
+             console.log("no object",data,typeof(data));		
+           }  
+        });

@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    style.
+     .row div{
+         margin: 5px 0;
+     }
+     .box{
+          text-align: center;
+          border: 1px solid #ccc;
+          padding: 20px 20px;
+          font-size: 73px;
+          border-radius: 10px;
+          background: #ccc;
+          color: #A1A1A1;
+     }
+     .box.active{
+          color: rgb(34, 148, 87);
+          background: #fff;
+          box-shadow: 1px 1px 1px;
+          box-shadow: 1px 1px 4px 2px rgba(43,148,87,0.2);
+     }
+
+  body
+    block content
+    block js
+        script(src="/bower_components/jquery/dist/jquery.min.js")
+        script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
+    block code     
